@@ -25,6 +25,10 @@ const SignUp = () => {
 
     const heandleCreateUser = event => {
         event.preventDefault();
+        // if(password !== confirmPassword){
+        //     setError('Does not match');
+        //     return;
+        // }
     
        
         createUserWithEmailAndPassword(email,password);
