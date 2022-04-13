@@ -1,0 +1,15 @@
+.review-items-container{
+    margin: 0 auto;
+}
+
+.cart-container button{
+    padding: 15px;
+    border-radius: 50px;
+    background-color: #FFE0B3;
+    border-color: white;
+    font-weight: 700;
+}
+button:hover{
+    background-color:  orange;
+}
+
