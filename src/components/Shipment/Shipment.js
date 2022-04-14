@@ -57,7 +57,7 @@ const Shipment = () => {
                     <input className='form-submit' type="submit" value="Add Shipping"></input>
                 </form>
 
-                <p>Already have an Account? <Link className='form-link' to='/login'>Login</Link> </p>
+               
             </div>
         </div>
     );

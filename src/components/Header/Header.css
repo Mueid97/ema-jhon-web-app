@@ -17,3 +17,11 @@
 .header a:hover{
     color: orange;
 }
+
+.btn{
+    padding: 10px;
+    margin-left: 10px;
+    border-radius: 50px;
+    border: none;
+    font-weight: 600;
+}

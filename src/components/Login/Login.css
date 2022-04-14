@@ -1,5 +1,4 @@
 .form-container{
-  
     width:  600px;
     margin: 50px auto;
     border: 1px solid gray;
@@ -7,6 +6,7 @@
     border-radius: 8px;
     display: flex;
     justify-content: center;
+    padding-bottom: 40px;
 }
 .from-title{
     font-size: 34px;
