@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 
@@ -8,8 +8,10 @@ const SignUp = () => {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState('');
+    const navigate = useNavigate();
 
-    const [createUserWithEmailAndPassword] = useCreateUserWithEmailAndPassword(auth);
+    const [createUserWithEmailAndPassword,user] = useCreateUserWithEmailAndPassword(auth);
+    
 
     const heandelEmailBlur = (event) => {
         setEmail(event.target.value);
@@ -19,19 +21,21 @@ const SignUp = () => {
         setPassword(event.target.value);
     }
 
-    const heandelCpasswordBlur = event => {
+    const heandelConfirmpasswordBlur = event => {
         setConfirmPassword(event.terget.value);
     }
+    if(user){
+        navigate('/shop');
+    }
+    
 
     const heandleCreateUser = event => {
         event.preventDefault();
         // if(password !== confirmPassword){
-        //     setError('Does not match');
+        //     setError("not match");
         //     return;
         // }
-    
-       
-        createUserWithEmailAndPassword(email,password);
+        createUserWithEmailAndPassword(email,password); 
     }
 
     return (
@@ -49,10 +53,10 @@ const SignUp = () => {
                     </div>
                     <div className="input-group">
                         <label htmlFor="password">Confirm Password</label>
-                        <input onBlur={heandelCpasswordBlur} type="password" name="confirm-password" required />
+                        <input onBlur={heandelConfirmpasswordBlur} type="password" name="confirmPassword" required />
                     </div>
                     <p style={{ color: 'red' }} > {error}</p>
-                    <input className='form-submit' type="submit" value="Signup" />
+                    <input className='form-submit' type="submit" value="Signup"></input>
                 </form>
 
                 <p>Already have an Account? <Link className='form-link' to='/login'>Login</Link> </p>
