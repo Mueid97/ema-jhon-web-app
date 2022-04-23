@@ -12,7 +12,7 @@ const Header = () => {
         signOut(auth);
     }
     return (
-        <nav className='header'>
+        <nav className='header' >
             <img src={logo} alt="" />
             <div>
                 <Link to="/shop">Shop</Link>
